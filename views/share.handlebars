@@ -1,0 +1,61 @@
+<div class="wrapper">
+
+    <!-- Header and logo -->
+    <div class="container">
+        <header class="subnav-hero-section">
+            <a href="/"><h1 class="title">Remember Them<img src="/css/logo.png" alt="Navy SEAL Trident" height="50" width="101"></h1></a>
+        </header>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="container" id="menu-bar">    
+        <div>
+            <ul class="menu menu-hover-lines">
+                <li><a href="/">Home</a></li>
+                <li><a href="/SEALs">Fallen Service Members</a></li>
+                <li><a href="/creed">Creeds</a></li>
+            </ul>
+        </div>
+    </nav>
+
+ 
+    <div class="columns contact-us-section-right">
+        <h2 id="contact-us-header">Share Your Story</h2>
+        <br>
+    {{!-- Posts from database are displayed here --}}
+    <div class="container">
+        {{#each post}}
+        <div class="card">
+            <p>{{this.dataValues.post}}</p>
+            <p>Posted by: {{this.dataValues.poster_name}}</p>
+            <p>Posted at: {{this.dataValues.createdAt}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+    <button class="button" id="story-button">Add Your Story</button>
+
+        <form class="forum-form hide">
+            <input type="text" placeholder="Full name" id="name-field">
+            <textarea name="message" id="message-field" rows="12" placeholder="Type your post here"></textarea>
+            <div class="contact-us-form-actions">
+                        <input type="submit" class="button" id="form-button" value="SUBMIT" />
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer with links to other pages -->
+    <footer>
+        <div class="container" id="footer-bar">    
+            <nav>
+                <ul class="menu menu-hover-lines">
+                    <li><a href="/links">Links</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <blockquote id="quote">"To us, and those like us, damn few."</blockquote>
+    </footer>
+</div>

@@ -1,0 +1,56 @@
+<div class="wrapper">
+
+    <!-- Header and logo -->
+    <div class="container">
+        <header class="subnav-hero-section">
+            <a href="/"><h1 class="title">Remember Them<img src="/css/logo.png" alt="Navy SEAL Trident" height="50" width="101"></a>
+            </h1>
+        </header>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="container" id="menu-bar">    
+        <div>
+            <ul class="menu menu-hover-lines">
+                <li><a href="/">Home</a></li>
+                <li><a href="/SEALs">Fallen Service Members</a></li>
+                <li><a href="/creed">Creeds</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <h2>The Fallen</h2>
+
+    {{! View all of the service members that currently exist in the database }}
+    <div class="flex-container" id="photo">
+        {{#each servicemembers}}
+        <div class="card">
+            <img src="{{this.dataValues.image}}" alt="Photo of {{this.dataValues.first_name}} {{this.dataValues.last_name}}">
+            <div class="card-section">
+                <h2>{{this.dataValues.first_name}} {{this.dataValues.last_name}} - {{this.dataValues.age}}</h2>
+                <p>{{this.dataValues.date_of_birth}} - {{this.dataValues.date_of_death}}</p>
+                <p>{{this.dataValues.branch_of_service}}</p>
+                <p><strong>Unit:</strong> {{this.dataValues.unit}}</p>
+                <p><strong>Awards and Recognitions:</strong> {{this.dataValues.awards}}</p>
+                <p><strong>Summary of Service:</strong> {{this.dataValues.summary_of_service}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    
+    <!-- Footer with links to other pages -->
+    <footer>
+        <div class="container" id="footer-bar">    
+            <nav>
+                <ul class="menu menu-hover-lines">
+                    <li><a href="/links">Links</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <blockquote id="quote">"To us, and those like us, damn few."</blockquote>
+    </footer>
